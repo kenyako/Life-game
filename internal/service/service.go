@@ -38,7 +38,7 @@ func New(height, width int) (*LifeService, error) {
 
 // получение очередного состояния игры
 func (ls *LifeService) NewState() *life.World {
-	life.NextState(ls.currentWorld, ls.nextWorld)
+	life.NextState(*ls.currentWorld, *ls.nextWorld)
 
 	ls.currentWorld = ls.nextWorld
 
